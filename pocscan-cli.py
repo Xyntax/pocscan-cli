@@ -39,7 +39,6 @@ if __name__ == '__main__':
     d = _get_static_post_attr(gc)
     d['username'] = config.USR
     d['password'] = config.PWD
-    print d
 
     pc = s.post(url=config.SERVER_URL + '/login/', data=d).content
     if '添加扫描' in pc:
@@ -55,7 +54,6 @@ if __name__ == '__main__':
     d['domains'] = targets.encode('utf8')
     d['poc_name'] = ''
     d['mode'] = '0'
-    print d
 
     pc2 = s.post(url=config.SERVER_URL + '/scan/', data=d).content
     print pc2
